@@ -1,0 +1,1 @@
+const char * const gitversion = "f0a7b28a63505edbb4f89163bb10ad992c57e657";
