@@ -1,0 +1,43 @@
+{
+  "log": {
+    "access": "/tmp/access.log",
+    "error":  "/tmp/error.log",
+    "loglevel": "warning"
+  },
+
+  "inbounds": [
+    {
+      "port": 22195, 
+      "protocol": "vmess",
+      "settings": {
+        "clients": [
+          {
+            "id": "c75d32f7-8d16-40fd-ae3a-8a8dbbdc0adb",  
+	    "level": 1,
+            "alterId": 64
+          }
+        ]
+      },
+      "streamSettings": {
+        "network": "mkcp", 
+        "kcpSettings": {
+          "uplinkCapacity": 5,
+          "downlinkCapacity": 100,
+          "congestion": true,
+          "header": {
+            "type": "none"
+          }
+        }
+      }
+    }
+  ],
+ 
+ "outbounds": [{
+    "protocol": "freedom",
+    "settings": {}
+  },{
+    "protocol": "blackhole",
+    "settings": {},
+    "tag": "blocked"
+  }]
+}
